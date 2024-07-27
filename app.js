@@ -40,14 +40,17 @@ const obj = {
 // Berilgan stringdagi har bir so'zning birinchi va oxirgi harfini o'zgartiring.
 function swapFirstLast(s) {
   let arr = s.split(" ");
-  arr[0] = arr[0].slice(1);
-  arr[arr.length - 1] = arr[arr.length - 1].slice(0, -1);
-  return arr.join(" ");
+  let res = ''
+  for (let i = 0; i < arr.length; i++) {
+      arr[i] = arr[i].slice(arr[i].length - 1)  +  arr[i].slice(1 , arr[i].length - 1) + arr[i].slice(0,1);
+    res += arr[i] + " ";
+  }
+return res
 }
 
 // Test case
-// console.log(swapFirstLast("hello world")); // Output: "oellh dlorw"
-// console.log(swapFirstLast("a quick brown fox")); // Output: "a kuicq nrowb fxo"
+console.log(swapFirstLast("hello world")); // Output: "oellh dlorw"/
+console.log(swapFirstLast("a quick brown fox")); // Output: "a kuicq nrowb fxo"
 
 // Berilgan raqamlar ro'yxatidagi eng katta elementning indeksini toping.
 function indexOfMax(arr) {
